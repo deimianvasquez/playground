@@ -52,7 +52,7 @@ def get_records(
 	stage: str = Query(None, description="Filter by stage: pending, review, personal_interview, technical_interview, offer_presented"),
 	search: str = Query(None, description="Search in full_name or email"),
 	page: int = Query(1, ge=1, description="Page number, default 1"),
-	limit: int = Query(20, ge=1, le=100, description="Results per page, default 20")
+	limit: int = Query(20, ge=1, description="Results per page, default 20 (no max limit)")
 ):
 	data_path = os.path.join(os.path.dirname(__file__), "data", "mock_data.json")
 	try:
